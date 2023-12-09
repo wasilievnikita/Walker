@@ -7,25 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		384B065B2AD5C7B8002AF753 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384B065A2AD5C7B8002AF753 /* MapViewController.swift */; };
 		388B06BE2AD4770E002768AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06BD2AD4770E002768AB /* AppDelegate.swift */; };
 		388B06C02AD4770E002768AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06BF2AD4770E002768AB /* SceneDelegate.swift */; };
-		388B06C22AD4770E002768AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06C12AD4770E002768AB /* ViewController.swift */; };
-		388B06C52AD4770E002768AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388B06C32AD4770E002768AB /* Main.storyboard */; };
 		388B06C82AD4770E002768AB /* Walkers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 388B06C62AD4770E002768AB /* Walkers.xcdatamodeld */; };
 		388B06CA2AD4770F002768AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 388B06C92AD4770F002768AB /* Assets.xcassets */; };
 		388B06CD2AD4770F002768AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388B06CB2AD4770F002768AB /* LaunchScreen.storyboard */; };
+		388B06DC2AD4781A002768AB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06DB2AD4781A002768AB /* Profile.swift */; };
+		388B06DE2AD47828002768AB /* ChangeUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06DD2AD47828002768AB /* ChangeUserSettings.swift */; };
+		388B06E02AD47838002768AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06DF2AD47838002768AB /* User.swift */; };
+		388B06E22AD4783E002768AB /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06E12AD4783E002768AB /* ApiController.swift */; };
+		388B06E42AD47853002768AB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06E32AD47853002768AB /* SearchResult.swift */; };
+		388B06E62AD47883002768AB /* NewUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06E52AD47883002768AB /* NewUserTableViewCell.swift */; };
+		388B06E82AD4788F002768AB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06E72AD4788F002768AB /* ApiManager.swift */; };
+		388B06EA2AD478A0002768AB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06E92AD478A0002768AB /* UIColor.swift */; };
+		388B06EF2AD47BFA002768AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06EE2AD47BFA002768AB /* ViewController.swift */; };
+		CF475B1F2B1DE7ED0026B05C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF475B1E2B1DE7ED0026B05C /* UserModel.swift */; };
+		CF475B212B1DEB1C0026B05C /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF475B202B1DEB1C0026B05C /* UserDefaultsService.swift */; };
+		CF8F9E942B1E42CE004B5A08 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8F9E932B1E42CE004B5A08 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		384B065A2AD5C7B8002AF753 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		388B06BA2AD4770E002768AB /* Walkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388B06BD2AD4770E002768AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388B06BF2AD4770E002768AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		388B06C12AD4770E002768AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		388B06C42AD4770E002768AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		388B06C72AD4770E002768AB /* Walkers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Walkers.xcdatamodel; sourceTree = "<group>"; };
 		388B06C92AD4770F002768AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		388B06CC2AD4770F002768AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		388B06CE2AD4770F002768AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		388B06DB2AD4781A002768AB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		388B06DD2AD47828002768AB /* ChangeUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserSettings.swift; sourceTree = "<group>"; };
+		388B06DF2AD47838002768AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		388B06E12AD4783E002768AB /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		388B06E32AD47853002768AB /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		388B06E52AD47883002768AB /* NewUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserTableViewCell.swift; sourceTree = "<group>"; };
+		388B06E72AD4788F002768AB /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		388B06E92AD478A0002768AB /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		388B06EE2AD47BFA002768AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF475B1E2B1DE7ED0026B05C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CF475B202B1DEB1C0026B05C /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		CF8F9E932B1E42CE004B5A08 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +80,75 @@
 		388B06BC2AD4770E002768AB /* Walkers */ = {
 			isa = PBXGroup;
 			children = (
-				388B06BD2AD4770E002768AB /* AppDelegate.swift */,
-				388B06BF2AD4770E002768AB /* SceneDelegate.swift */,
-				388B06C12AD4770E002768AB /* ViewController.swift */,
-				388B06C32AD4770E002768AB /* Main.storyboard */,
-				388B06C92AD4770F002768AB /* Assets.xcassets */,
-				388B06CB2AD4770F002768AB /* LaunchScreen.storyboard */,
 				388B06CE2AD4770F002768AB /* Info.plist */,
+				388B06EC2AD47B96002768AB /* Applications */,
+				388B06ED2AD47BAB002768AB /* Resources */,
+				388B06D82AD477E0002768AB /* UserSettings */,
+				388B06EB2AD47B80002768AB /* VC */,
+				388B06F02AD47D0B002768AB /* API */,
+				388B06F12AD47D17002768AB /* Cells */,
+				388B06E92AD478A0002768AB /* UIColor.swift */,
 				388B06C62AD4770E002768AB /* Walkers.xcdatamodeld */,
+				388B06EE2AD47BFA002768AB /* ViewController.swift */,
 			);
 			path = Walkers;
+			sourceTree = "<group>";
+		};
+		388B06D82AD477E0002768AB /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CF475B1E2B1DE7ED0026B05C /* UserModel.swift */,
+				CF475B202B1DEB1C0026B05C /* UserDefaultsService.swift */,
+			);
+			path = UserSettings;
+			sourceTree = "<group>";
+		};
+		388B06EB2AD47B80002768AB /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				388B06DB2AD4781A002768AB /* Profile.swift */,
+				388B06DD2AD47828002768AB /* ChangeUserSettings.swift */,
+				388B06E32AD47853002768AB /* SearchResult.swift */,
+				CF8F9E932B1E42CE004B5A08 /* CurrentUser.swift */,
+				384B065A2AD5C7B8002AF753 /* MapViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		388B06EC2AD47B96002768AB /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				388B06BD2AD4770E002768AB /* AppDelegate.swift */,
+				388B06BF2AD4770E002768AB /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		388B06ED2AD47BAB002768AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				388B06C92AD4770F002768AB /* Assets.xcassets */,
+				388B06CB2AD4770F002768AB /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		388B06F02AD47D0B002768AB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				388B06DF2AD47838002768AB /* User.swift */,
+				388B06E12AD4783E002768AB /* ApiController.swift */,
+				388B06E72AD4788F002768AB /* ApiManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		388B06F12AD47D17002768AB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				388B06E52AD47883002768AB /* NewUserTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +211,6 @@
 			files = (
 				388B06CD2AD4770F002768AB /* LaunchScreen.storyboard in Resources */,
 				388B06CA2AD4770F002768AB /* Assets.xcassets in Resources */,
-				388B06C52AD4770E002768AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +221,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				388B06C22AD4770E002768AB /* ViewController.swift in Sources */,
+				388B06EF2AD47BFA002768AB /* ViewController.swift in Sources */,
+				388B06DC2AD4781A002768AB /* Profile.swift in Sources */,
+				388B06DE2AD47828002768AB /* ChangeUserSettings.swift in Sources */,
+				388B06E22AD4783E002768AB /* ApiController.swift in Sources */,
+				CF475B1F2B1DE7ED0026B05C /* UserModel.swift in Sources */,
+				388B06EA2AD478A0002768AB /* UIColor.swift in Sources */,
 				388B06C82AD4770E002768AB /* Walkers.xcdatamodeld in Sources */,
 				388B06BE2AD4770E002768AB /* AppDelegate.swift in Sources */,
+				CF475B212B1DEB1C0026B05C /* UserDefaultsService.swift in Sources */,
 				388B06C02AD4770E002768AB /* SceneDelegate.swift in Sources */,
+				388B06E02AD47838002768AB /* User.swift in Sources */,
+				388B06E82AD4788F002768AB /* ApiManager.swift in Sources */,
+				388B06E62AD47883002768AB /* NewUserTableViewCell.swift in Sources */,
+				388B06E42AD47853002768AB /* SearchResult.swift in Sources */,
+				CF8F9E942B1E42CE004B5A08 /* CurrentUser.swift in Sources */,
+				384B065B2AD5C7B8002AF753 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		388B06C32AD4770E002768AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				388B06C42AD4770E002768AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		388B06CB2AD4770F002768AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,11 +375,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CUSYF644Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Walkers/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,11 +403,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CUSYF644Y4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Walkers/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
