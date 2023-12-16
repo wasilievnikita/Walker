@@ -9,4 +9,22 @@ Users have to fill their personal information (name, age, hobbies etc) and choos
 This app is built on architecture MVC and with MapKit. 
 Also you can see here the API which generating random users as result for searching. 
 
+## Additional information
+The App is under development and soon i will update the View of result of searching and additional info about result.
 
+## Screenshots of App
+### Launch Screen
+
+### Map
+
+### User's personal info
+
+### Changing user's personal info
+
+### Personal info error
+
+### ROute on a map
+
+### Searching result
+
+### Choosen user

@@ -10,36 +10,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
-    
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
         
-        let profileViewController = ProfileViewController()
-        let mapViewController = MapViewController()
-        
-        let profileNavViewController = UINavigationController(rootViewController: profileViewController)
-        let mapNavViewController = UINavigationController(rootViewController:mapViewController)
-  
-        
-        mapNavViewController.tabBarItem.title = "Поиск"
-        mapNavViewController.tabBarItem.image = UIImage(named: "search-3")
-        
-        profileNavViewController.tabBarItem.title = "Мой профиль"
-        profileNavViewController.tabBarItem.image = UIImage(named: "user")
-        
-//        mapNavViewController.tabBarItem.title = "О приложении"
-//        mapNavViewController.tabBarItem.image = UIImage(named: "info")
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [mapNavViewController, profileNavViewController ]
-        tabBarController.tabBar.backgroundColor = .white
+        let launch = LaunchVC()
         
         window.backgroundColor = .white
-        window.rootViewController = tabBarController
+        window.rootViewController = launch
         self.window = window
         window.makeKeyAndVisible()
         
