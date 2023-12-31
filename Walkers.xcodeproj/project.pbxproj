@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3821C62B2B3A028F00804665 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3821C62A2B3A028F00804665 /* FileService.swift */; };
 		384B065B2AD5C7B8002AF753 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384B065A2AD5C7B8002AF753 /* MapViewController.swift */; };
 		3883936E2B2D970B00E5305B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3883936D2B2D970B00E5305B /* Launch Screen.storyboard */; };
 		388B06BE2AD4770E002768AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388B06BD2AD4770E002768AB /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3821C62A2B3A028F00804665 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		384B065A2AD5C7B8002AF753 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3883936D2B2D970B00E5305B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		388B06BA2AD4770E002768AB /* Walkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +85,7 @@
 				388B06CE2AD4770F002768AB /* Info.plist */,
 				388B06EC2AD47B96002768AB /* Applications */,
 				388B06ED2AD47BAB002768AB /* Resources */,
-				388B06D82AD477E0002768AB /* UserSettings */,
+				388B06D82AD477E0002768AB /* SavedData */,
 				388B06EB2AD47B80002768AB /* VC */,
 				388B06F02AD47D0B002768AB /* API */,
 				388B06F12AD47D17002768AB /* Cells */,
@@ -93,13 +95,14 @@
 			path = Walkers;
 			sourceTree = "<group>";
 		};
-		388B06D82AD477E0002768AB /* UserSettings */ = {
+		388B06D82AD477E0002768AB /* SavedData */ = {
 			isa = PBXGroup;
 			children = (
+				3821C62A2B3A028F00804665 /* FileService.swift */,
 				CF475B1E2B1DE7ED0026B05C /* UserModel.swift */,
 				CF475B202B1DEB1C0026B05C /* UserDefaultsService.swift */,
 			);
-			path = UserSettings;
+			path = SavedData;
 			sourceTree = "<group>";
 		};
 		388B06EB2AD47B80002768AB /* VC */ = {
@@ -227,6 +230,7 @@
 				388B06E22AD4783E002768AB /* ApiController.swift in Sources */,
 				CF475B1F2B1DE7ED0026B05C /* UserModel.swift in Sources */,
 				388B06EA2AD478A0002768AB /* UIColor.swift in Sources */,
+				3821C62B2B3A028F00804665 /* FileService.swift in Sources */,
 				388B06C82AD4770E002768AB /* Walkers.xcdatamodeld in Sources */,
 				388B06BE2AD4770E002768AB /* AppDelegate.swift in Sources */,
 				CF475B212B1DEB1C0026B05C /* UserDefaultsService.swift in Sources */,
@@ -370,6 +374,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Walkers/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -397,6 +402,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Walkers/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please allow access";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

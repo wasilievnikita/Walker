@@ -7,10 +7,11 @@
 
 import UIKit
 class LaunchVC: UIViewController {
-
-    private let icon: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 100, y: 250, width: 200, height: 200))
-        imageView.image = UIImage.init(named: "icon")
+    
+    private lazy var avatar: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "icon")
         return imageView
     }()
     
@@ -18,17 +19,43 @@ class LaunchVC: UIViewController {
         let label = UILabel(frame: CGRect(x: 115, y: 900, width: 300, height: 30))
         label.text = "Find your Walker!"
         label.textColor = .black
-        label.font = UIFont(name: "HelveticaNeue", size: 25)
+        label.font = UIFont(name: "Khmer Sangam MN", size: 30)
         return label
     }()
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad(){
         super.viewDidLoad()
         addBackground()
-        addViews()
         animatew()
+        layout()
     }
-  
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6 , execute: {
+            self.animatew()
+        })
+    }
+    
+    // MARK: - Setup layout
+    
+    func layout() {
+        view.addSubview(avatar)
+        view.addSubview(welcomeText)
+        
+        let inset: CGFloat = 200
+        
+        NSLayoutConstraint.activate([
+            
+            avatar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1.1 * inset),
+            avatar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            avatar.heightAnchor.constraint(equalToConstant: inset),
+            avatar.widthAnchor.constraint(equalToConstant: inset)])
+    }
+    
+    // MARK: - Add wallpaper
     
     func addBackground() {
         let width = UIScreen.main.bounds.size.width
@@ -40,28 +67,19 @@ class LaunchVC: UIViewController {
         view.sendSubviewToBack(imageViewBackground)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8 , execute: {
-            self.animatew()
-        })
-    }
+    // MARK: - Animation
     
-    func addViews() {
-        view.addSubview(icon)
-        view.addSubview(welcomeText)
-    }
     private func animatew() {
-        UIView.animate(withDuration: 2 ) {
-            self.welcomeText.frame = CGRect(x: 115, y: 750, width: 300, height: 30)
+        UIView.animate(withDuration: 1 ) {
+            self.welcomeText.frame = CGRect(x: 115, y: 820, width: 300, height: 30)
         } completion: { done in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7 , execute: {
                 let profileViewController = ProfileViewController()
                 let mapViewController = MapViewController()
                 
                 let profileNavViewController = UINavigationController(rootViewController: profileViewController)
                 let mapNavViewController = UINavigationController(rootViewController:mapViewController)
-          
+                
                 mapNavViewController.tabBarItem.title = "Поиск"
                 mapNavViewController.tabBarItem.image = UIImage(named: "search-3")
                 
@@ -81,8 +99,10 @@ class LaunchVC: UIViewController {
             )
         }
     }
-
+    
 }
+
+// MARK: - Add gradient of wallpapers
 
 extension LaunchVC {
     func addGradient() {

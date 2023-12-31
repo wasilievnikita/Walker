@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    private let fileService: FileService
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -17,6 +19,7 @@ class ProfileViewController: UIViewController {
         addGradient()
         addViews()
         layout()
+        setupAvatar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +29,53 @@ class ProfileViewController: UIViewController {
     }
     
     // MARK: - UIElements
+    
+    private lazy var avatar: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.borderWidth = 3
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 75
+        imageView.image = UIImage(named: "no_avatar")
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction)))
+        return imageView
+    }()
+    
+    private lazy var addAvatar: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: "plus")
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapAction)))
+        return imageView
+    }()
+    
+    @objc private func tapAction() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    init() {
+        fileService = FileService()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(fileService: FileService) {
+        self.fileService = fileService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var editButton: UIButton = {
         let button = UIButton(type: .system)
@@ -58,7 +108,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Имя:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -66,7 +116,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Возраст:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -74,28 +124,28 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Радиус поиска, км:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
     private lazy var userName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
     private lazy var userAge: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
     private lazy var currentRadius: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -103,7 +153,7 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Интересы:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -111,11 +161,12 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
-    // MARK: - Funcs
+    // MARK: - Using UD
+    
     let defaults = UserDefaults.standard
     
     func setup() {
@@ -145,7 +196,31 @@ class ProfileViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: - Get saved Avatar
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
+    // MARK: - Setup Avatar
+    func setupAvatar() {
+        if fileService.items.isEmpty {
+            avatar.image = UIImage(named: "no_avatar")
+        } else {
+            if let image = getSavedImage(named: "fileName") {
+                avatar.image = image
+            }
+        }
+    }
+    
+    // MARK: - Setup layout
+    
     func addViews() {
+        view.addSubview(avatar)
+        view.addSubview(addAvatar)
         view.addSubview(stackView)
         view.addSubview(editButton)
         stackView.addSubview(name)
@@ -164,7 +239,17 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: inset2 / 2),
+            avatar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: inset / 5),
+            avatar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            avatar.heightAnchor.constraint(equalToConstant: inset),
+            avatar.widthAnchor.constraint(equalToConstant: inset),
+            
+            addAvatar.bottomAnchor.constraint(equalTo: avatar.bottomAnchor, constant: -inset / 13),
+            addAvatar.leadingAnchor.constraint(equalTo: avatar.leadingAnchor, constant: inset / 13),
+            addAvatar.heightAnchor.constraint(equalToConstant: inset / 5),
+            addAvatar.widthAnchor.constraint(equalToConstant: inset / 5),
+            
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4 * inset2),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: inset2 / 3),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -inset2 / 3),
             stackView.heightAnchor.constraint(equalToConstant: 2 * inset),
@@ -217,5 +302,19 @@ extension ProfileViewController {
     }
 }
 
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            avatar.image = image
+            let savedImage = fileService.saveImage(image: image)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+}

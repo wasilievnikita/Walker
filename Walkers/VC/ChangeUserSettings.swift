@@ -55,7 +55,7 @@ final class ChangeUserSettings: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Ваше имя:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -63,7 +63,7 @@ final class ChangeUserSettings: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Ваш возраст:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -71,7 +71,7 @@ final class ChangeUserSettings: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Радиус поиска, км:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
@@ -79,14 +79,14 @@ final class ChangeUserSettings: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Ваши интересы:"
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
+        label.font = UIFont(name: "HelveticaNeue", size: 20)
         return label
     }()
     
     private var nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = .systemFont(ofSize: 16)
+        textField.font = .systemFont(ofSize: 20)
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
         textField.layer.cornerRadius = 6
@@ -101,7 +101,7 @@ final class ChangeUserSettings: UIViewController {
     private lazy var ageTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = .systemFont(ofSize: 16)
+        textField.font = .systemFont(ofSize: 20)
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
         textField.layer.cornerRadius = 6
@@ -116,7 +116,7 @@ final class ChangeUserSettings: UIViewController {
     private lazy var radiusTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = .systemFont(ofSize: 16)
+        textField.font = .systemFont(ofSize: 20)
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
         textField.layer.cornerRadius = 6
@@ -131,7 +131,7 @@ final class ChangeUserSettings: UIViewController {
     private var hobbiesTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = .systemFont(ofSize: 16)
+        textField.font = .systemFont(ofSize: 20)
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
         textField.layer.cornerRadius = 6
@@ -233,7 +233,7 @@ final class ChangeUserSettings: UIViewController {
             nameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset2 / 2),
             nameTextField.heightAnchor.constraint(equalToConstant: inset2 * 2/3),
             
-            age.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: inset2/2),
+            age.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: inset2/3),
             age.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             age.trailingAnchor.constraint(equalTo: name.trailingAnchor),
             
@@ -242,7 +242,7 @@ final class ChangeUserSettings: UIViewController {
             ageTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset2 / 2),
             ageTextField.heightAnchor.constraint(equalToConstant: inset2 * 2/3),
             
-            radius.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: inset2 / 2),
+            radius.topAnchor.constraint(equalTo: ageTextField.bottomAnchor, constant: inset2 / 3),
             radius.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             radius.trailingAnchor.constraint(equalTo: name.trailingAnchor),
             
@@ -251,14 +251,14 @@ final class ChangeUserSettings: UIViewController {
             radiusTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset2 / 2),
             radiusTextField.heightAnchor.constraint(equalToConstant: inset2 * 2/3),
             
-            hobbies.topAnchor.constraint(equalTo: radiusTextField.bottomAnchor, constant: inset2 / 2),
+            hobbies.topAnchor.constraint(equalTo: radiusTextField.bottomAnchor, constant: inset2 / 3),
             hobbies.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             hobbies.trailingAnchor.constraint(equalTo: name.trailingAnchor),
             
             hobbiesTextField.topAnchor.constraint(equalTo: hobbies.bottomAnchor, constant: inset2 / 3),
             hobbiesTextField.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             hobbiesTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset2 / 2),
-            hobbiesTextField.heightAnchor.constraint(equalToConstant: inset2 * 3),
+            hobbiesTextField.heightAnchor.constraint(equalToConstant: inset2 * 1.5),
             
             saveButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset2 / 2),
             saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset2 / 2),
@@ -300,5 +300,6 @@ extension ChangeUserSettings {
         present(allert, animated: true)
     }
 }
+
 
 
